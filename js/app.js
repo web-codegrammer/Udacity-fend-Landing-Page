@@ -26,7 +26,6 @@ newSecItem.innerHTML = `
       <div class="landing__container">
         <h2>Section 4</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
-
         <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
       </div>
     </section>
@@ -68,6 +67,35 @@ smoothScroll = (event) => {
         block: "start"
     });
 }
+
+
+
+/// script for active navigation style scroll
+
+window.addEventListener('scroll', event => {
+    let nav = document.querySelector('.navbar__menu');
+    
+    (window.scrollY >= 1) ? nav.classList.add('scroll') : nav.classList.remove('scroll');
+});
+
+
+window.addEventListener('scroll', event => {
+    let navLinks = document.querySelectorAll('nav ul li a');
+    let fromTop = window.scrollY;
+    
+    navLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+        
+        if (
+            section.offsetTop <= fromTop && 
+            section.offsetTop + section.offsetHeight > fromTop
+        ) {
+            link.classList.add('current');
+        } else {
+            link.classList.remove('current');
+        }
+    });
+});
 
 
 
