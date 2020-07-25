@@ -17,3 +17,9 @@ During the scrolling the navbar is automatically hidden and showed according the
 
 
 When scrolling past a configurable buffer, a new element will appear close to the bottom of the page. This element can be used by the users to scroll to the very top of the page.
+
+## License 
+
+[MIT](https://github.com/web-codegrammer/Udacity-fend-Landing-Page/blob/master/LICENSE)
+
+Issued to ```Devanshu Vashishtha``` | All Rights Reserved | 2020
